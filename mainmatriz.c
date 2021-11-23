@@ -17,7 +17,7 @@ modular(procedure and functions) fazer um algoritmo em C para
 int main() {
   srand(time(0));
   int matriz[3][3];
-  int matrizEspelho[5][3];
+  int matrizEspelho[3][5];
   for (int i = 0; i < 3; i++) {
     for (int j = 0; j < 3; j++) {
       matriz[i][j] = rand() % 100;
@@ -31,24 +31,18 @@ int main() {
     }
     printf("\n");
   }
-  printf("\nMatriz ESPELHO\n");
-  for (int i = 0; i < 3; i++) {
-    for (int j = 0; j < 5; j++) {
-      printf("|%.2d|", matrizEspelho[i][j]);
-    }
-    printf("\n");
-  }
   for (int i = 0; i < 3; i++) {
     for (int j = 0; j < 2; j++) {
-      matrizEspelho[i][j + 3] = matriz[i][j];
+      matrizEspelho[i][j+3] = matriz[i][j];
     }
   }
 
-  printf("\nMatriz Espelho DEPOIS\n");
+  printf("\nMatriz Espelho\n");
   for (int i = 0; i < 3; i++) {
     for (int j = 0; j < 5; j++) {
       printf("|%.2d|", matrizEspelho[i][j]);
     }
     printf("\n");
   }
+
 }
